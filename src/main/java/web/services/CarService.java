@@ -20,6 +20,12 @@ public class CarService {
     }
 
     public List<Car> showCountCars(int n) {
-        return cars.stream().limit(n).toList();
+        List<Car> showCars = new ArrayList<>();
+        try {
+            showCars = cars.stream().limit(n).toList();
+        } catch (IllegalArgumentException e) {
+            showCars = cars;
+        }
+        return showCars;
     }
 }
