@@ -20,7 +20,7 @@ public class CarService {
     }
 
     public List<Car> showCountCars(int n) {
-        List<Car> showCars = new ArrayList<>();
+        List<Car> showCars;
         try {
             showCars = cars.stream().limit(n).toList();
         } catch (IllegalArgumentException e) {
